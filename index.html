@@ -1,23 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhafira Nur Syahdrina | Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            --navy: #102b3f;
-            --blue: #1c5268;
-            --teal: #54b7aa;
-            --light: #f5f8f8;
-            --text: #243746;
-            --muted: #758591;
-            --white: #ffffff;
+            --navy: #211C19;
+            --blue: #49372C;
+            --teal: #A58B73;
+            --light: #F3EEE7;
+            --text: #302820;
+            --muted: #82766B;
+            --white: #FFFFFF;
         }
 
         * {
@@ -45,15 +47,88 @@
             margin: auto;
         }
 
+        .org-description {
+            font-size: 13px;
+            line-height: 1.7;
+            color: #82766B;
+            margin-top: 12px;
+        }
+
+        /* PORTFOLIO CONTENT */
+
+        .portfolio-content {
+            padding: 25px;
+        }
+
+        .portfolio-category {
+            display: block;
+            color: #A58B73;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-content h3 {
+            color: #211C19;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .portfolio-content p {
+            color: #82766B;
+            font-size: 13px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* MAPPING DOCUMENT BUTTON */
+
+        .portfolio-content h4 {
+            margin-top: 25px;
+            margin-bottom: 14px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #302820;
+        }
+
+        .document-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .document-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            background: #211C19;
+            color: #FFFFFF;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .document-btn:hover {
+            background: #49372C;
+            transform: translateY(-2px);
+        }
+
         /* NAVBAR */
+
         header {
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            background: rgba(255,255,255,0.94);
+            background: rgba(33, 28, 25, 0.96);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid #e8eeee;
+            border-bottom: 1px solid #49372C;
         }
 
         nav {
@@ -67,28 +142,28 @@
             font-family: 'Manrope', sans-serif;
             font-size: 21px;
             font-weight: 800;
-            color: var(--navy);
+            color: #F3EEE7;
         }
 
         .logo span {
-            color: var(--teal);
+            color: #C9B39D;
         }
 
         .nav-links {
             display: flex;
-            gap: 27px;
+            gap: 23px;
             list-style: none;
         }
 
         .nav-links a {
             font-size: 13px;
             font-weight: 600;
-            color: var(--muted);
+            color: #E7DCCF;
             transition: 0.3s;
         }
 
         .nav-links a:hover {
-            color: var(--teal);
+            color: #C9B39D;
         }
 
         .menu-btn {
@@ -97,18 +172,113 @@
             cursor: pointer;
             background: none;
             border: none;
-            color: var(--navy);
+            color: #F3EEE7;
+        }
+
+        /* PORTFOLIO SLIDER */
+
+        .portfolio-slider {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 15px 15px 0 0;
+            background: #E7DCCF;
+        }
+
+        .slider-images {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .slider-images img,
+        .slider-images video {
+            display: block;
+            flex: 0 0 100%;
+            width: 100%;
+            min-width: 100%;
+            max-width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: none;
+        }
+
+        .slider-images video {
+            background: #211C19;
+            object-fit: contain;
+        }
+
+        /* SLIDER BUTTON */
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 5;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: rgba(33, 28, 25, 0.8);
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .slider-btn.prev {
+            left: 15px;
+        }
+
+        .slider-btn.next {
+            right: 15px;
+        }
+
+        /* SLIDER DOTS */
+
+        .slider-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            z-index: 6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .slider-dots button {
+            width: 9px;
+            height: 9px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+        }
+
+        .slider-dots button.active {
+            width: 22px;
+            border-radius: 10px;
+            background: #49372C;
         }
 
         /* HERO */
+
         .hero {
             min-height: 100vh;
             padding: 140px 0 80px;
             display: flex;
             align-items: center;
             background:
-                radial-gradient(circle at 85% 25%, #d9eeeb 0, transparent 30%),
-                linear-gradient(120deg, #f5f8f8, #eaf2f2);
+                radial-gradient(circle at 85% 25%,
+                    #C9B39D 0,
+                    transparent 30%),
+                linear-gradient(120deg,
+                    #F3EEE7,
+                    #E7DCCF);
         }
 
         .hero-content {
@@ -190,53 +360,22 @@
             width: 300px;
             height: 360px;
             border-radius: 150px 150px 20px 20px;
-            background: linear-gradient(145deg, var(--navy), var(--blue));
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 30px;
-            position: relative;
-            box-shadow: 20px 20px 0 #d2e9e4;
             overflow: hidden;
+            position: relative;
+            background: #49372C;
+            box-shadow: 20px 20px 0 #C9B39D;
         }
 
-        .profile-card::before {
-            content: "";
-            position: absolute;
-            width: 250px;
-            height: 250px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 50%;
-        }
-
-        .profile-card::after {
-            content: "";
-            position: absolute;
-            width: 190px;
-            height: 190px;
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 50%;
-        }
-
-        .profile-initial {
-            z-index: 1;
-        }
-
-        .profile-initial h2 {
-            font-family: 'Manrope', sans-serif;
-            font-size: 75px;
-            line-height: 1.2;
-            color: var(--teal);
-        }
-
-        .profile-initial p {
-            font-size: 12px;
-            letter-spacing: 2px;
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
         }
 
         /* GENERAL SECTION */
+
         section {
             padding: 100px 0;
             scroll-margin-top: 70px;
@@ -246,7 +385,7 @@
             margin-bottom: 45px;
         }
 
-        .section-title p {
+        .section-title>p {
             color: var(--teal);
             font-size: 12px;
             letter-spacing: 3px;
@@ -262,6 +401,7 @@
         }
 
         /* ABOUT */
+
         .about {
             background: white;
         }
@@ -303,6 +443,7 @@
         }
 
         /* EXPERIENCE */
+
         .experience {
             background: var(--light);
         }
@@ -319,7 +460,7 @@
             background: white;
             padding: 25px;
             border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(16,43,63,0.04);
+            box-shadow: 0 5px 25px rgba(16, 43, 63, 0.04);
         }
 
         .timeline-item::before {
@@ -360,6 +501,7 @@
         }
 
         /* EDUCATION */
+
         .education {
             background: white;
         }
@@ -388,6 +530,7 @@
         }
 
         /* SKILLS */
+
         .skills {
             background: var(--navy);
         }
@@ -409,8 +552,8 @@
         .skill-card {
             padding: 30px;
             border-radius: 12px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .skill-card h3 {
@@ -426,13 +569,14 @@
 
         .skill-tags span {
             padding: 9px 14px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             color: white;
             border-radius: 5px;
             font-size: 12px;
         }
 
         /* ORGANIZATION */
+
         .organization {
             background: var(--light);
         }
@@ -452,7 +596,7 @@
 
         .org-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(16,43,63,0.08);
+            box-shadow: 0 10px 25px rgba(16, 43, 63, 0.08);
         }
 
         .org-card h3 {
@@ -470,7 +614,99 @@
             margin-top: 10px;
         }
 
+        /* PORTFOLIO GALLERY */
+
+        .portfolio {
+            background: white;
+        }
+
+        .portfolio-intro {
+            color: var(--muted);
+            max-width: 650px;
+            margin-top: -25px;
+            margin-bottom: 35px;
+            font-size: 14px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background: var(--light);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+            border: 1px solid #e8eeee;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(16, 43, 63, 0.1);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-info {
+            padding: 23px;
+        }
+
+        .portfolio-info h3 {
+            color: var(--navy);
+            font-size: 17px;
+            margin: 8px 0;
+        }
+
+        .portfolio-info p {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .portfolio-tag {
+            color: var(--teal);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .portfolio-info h4 {
+            color: var(--navy);
+            font-size: 13px;
+            margin: 18px 0 10px;
+        }
+
+        .document-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .document-btn {
+            display: inline-block;
+            padding: 9px 15px;
+            background: var(--navy);
+            color: white;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .document-btn:hover {
+            background: var(--teal);
+        }
+
         /* ACHIEVEMENTS */
+
         .achievements {
             background: white;
         }
@@ -504,6 +740,7 @@
         }
 
         /* CONTACT */
+
         .contact {
             background: var(--light);
             text-align: center;
@@ -514,7 +751,7 @@
             margin: auto;
         }
 
-        .contact-content > p {
+        .contact-content>p {
             color: var(--muted);
             margin-bottom: 30px;
         }
@@ -535,6 +772,7 @@
         }
 
         /* RESPONSIVE */
+
         @media(max-width: 850px) {
             .nav-links {
                 display: none;
@@ -546,7 +784,7 @@
                 flex-direction: column;
                 padding: 25px 6%;
                 gap: 20px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
             }
 
             .nav-links.active {
@@ -599,7 +837,8 @@
             .skill-groups,
             .org-grid,
             .achievement-list,
-            .info-list {
+            .info-list,
+            .portfolio-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -612,484 +851,906 @@
 
 <body>
 
-<header>
-    <div class="container">
-        <nav>
-            <a href="#home" class="logo">Zhafira<span>.</span></a>
+    <!-- NAVBAR -->
 
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#organization">Organization</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">Zhafira<span>.</span></a>
 
-            <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
-        </nav>
-    </div>
-</header>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#organization">Organization</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
 
-<!-- HOME -->
-<section class="hero" id="home">
-    <div class="container hero-content">
+                <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">☰</button>
+            </nav>
+        </div>
+    </header>
 
-        <div>
-            <p class="eyebrow">GIS Student | Surveying | Geospatial Technology</p>
+    <!-- HOME -->
 
-            <h1>
-                Hello, I'm<br>
-                <span>Zhafira Nur Syahdrina.</span>
-            </h1>
+    <section class="hero" id="home">
+        <div class="container hero-content">
 
-            <p class="hero-description">
-                An Undergraduate Geographic Information Systems student
-                at Universitas Gadjah Mada, passionate about surveying,
-                geospatial technology, spatial data processing, and mapping.
+            <div>
+                <p class="eyebrow">
+                    GIS Student | Surveying | Geospatial Technology
+                </p>
+
+                <h1>
+                    Hello, I'm<br>
+                    <span>Zhafira Nur Syahdrina.</span>
+                </h1>
+
+                <p class="hero-description">
+                    An Undergraduate Geographic Information Systems student
+                    at Universitas Gadjah Mada, passionate about surveying,
+                    geospatial technology, spatial data processing, and mapping.
+                </p>
+
+                <div class="buttons">
+                    <a href="#experience" class="btn btn-primary">
+                        Explore My Experience
+                    </a>
+
+                    <a href="#contact" class="btn btn-outline">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-card">
+                    <img src="assets/images/profile.jpeg" alt="Zhafira Nur Syahdrina" class="profile-photo">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about" id="about">
+        <div class="container">
+
+            <div class="section-title">
+                <p>Get to know me</p>
+                <h2>About Me</h2>
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-text">
+                    <p>
+                        I am a Geographic Information Systems student at
+                        Universitas Gadjah Mada with a strong interest in
+                        surveying, mapping, and geospatial data processing.
+                    </p>
+
+                    <p>
+                        I have experience in aerial surveying, GNSS field
+                        activities, topographic measurements, and spatial
+                        data processing using various GIS applications.
+                    </p>
+
+                    <p>
+                        Beyond technical skills, I actively participate in
+                        organizational activities and have experience in
+                        leadership, teamwork, coordination, and event management.
+                    </p>
+                </div>
+
+                <div class="info-list">
+
+                    <div class="info-item">
+                        <h3>Education</h3>
+                        <p>Universitas Gadjah Mada</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Major</h3>
+                        <p>Geographic Information Systems</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Location</h3>
+                        <p>Sleman, Yogyakarta</p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3>Interests</h3>
+                        <p>GIS, Surveying & Mapping</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+
+    <section class="experience" id="experience">
+        <div class="container">
+
+            <div class="section-title">
+                <p>My professional journey</p>
+                <h2>Work Experience</h2>
+            </div>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <span class="date">AUG 2026 – PRESENT</span>
+                    <h3>Teaching Assistant – Aerial Survey Practicum</h3>
+                    <p class="company">Universitas Gadjah Mada</p>
+                    <ul>
+                        <li>Assisted students in aerial surveying practical sessions using drones.</li>
+                        <li>Assisted in processing and analyzing aerial imagery.</li>
+                        <li>Conducted drone flight planning.</li>
+                        <li>Provided technical guidance during practical activities.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date">AUG 2026 – PRESENT</span>
+                    <h3>Teaching Assistant – GNSS Practicum</h3>
+                    <p class="company">Universitas Gadjah Mada</p>
+                    <ul>
+                        <li>Assisted students in GNSS surveying practical sessions.</li>
+                        <li>Guided GNSS equipment operation and field data collection.</li>
+                        <li>Provided technical assistance during practical activities.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date">MAY 2024 – JUL 2024</span>
+                    <h3>Internship – Mapping Team</h3>
+                    <p class="company">ATR/BPN Bantul</p>
+                    <ul>
+                        <li>Processed PTSL data using AutoCAD and ArcGIS.</li>
+                        <li>Performed parcel digitization, topology, and delineation.</li>
+                        <li>Identified and managed data using Microsoft Excel.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date">JUN 2023 – AUG 2023</span>
+                    <h3>Internship – Drafter</h3>
+                    <p class="company">MASKI KOMWIL DIY</p>
+                    <ul>
+                        <li>Conducted data quality control processes.</li>
+                        <li>Performed quality checks on PTSL processes.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date">OCT 2022 – DEC 2022</span>
+                    <h3>Internship – Drafter</h3>
+                    <p class="company">Geo Survey Persada Indonesia</p>
+                    <ul>
+                        <li>Processed PTSL data using AutoCAD.</li>
+                        <li>Prepared project drawings using AutoCAD and Excel.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-item">
+                    <span class="date">SEP 2022 – OCT 2022</span>
+                    <h3>Internship – Assistant Surveyor</h3>
+                    <p class="company">PT Kalimantan Prima Persada</p>
+                    <ul>
+                        <li>Conducted topographic measurements using Total Station.</li>
+                        <li>Performed stakeout and vessel navigation using GNSS.</li>
+                        <li>Processed survey data using Surpac.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+
+    <section class="education" id="education">
+        <div class="container">
+
+            <div class="section-title">
+                <p>Academic background</p>
+                <h2>Education</h2>
+            </div>
+
+            <div class="education-grid">
+
+                <div class="education-card">
+                    <h3>Universitas Gadjah Mada</h3>
+                    <p>Geographic Information Systems</p>
+                    <br>
+                    <p>
+                        • Spatial data processing and cartographic mapping<br>
+                        • WebGIS and mobile application development<br>
+                        • Spatial database management<br>
+                        • Aerial and UAV imagery processing
+                    </p>
+                </div>
+
+                <div class="education-card">
+                    <h3>SMKN 2 Yogyakarta</h3>
+                    <p>Geomatics Engineering</p>
+                    <br>
+                    <p>
+                        • Topographic surveying using Total Station and GNSS<br>
+                        • Drone operation and orthophoto processing<br>
+                        • Best Participant in Aerial Photo Data Processing
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section class="skills" id="skills">
+        <div class="container">
+
+            <div class="section-title">
+                <p>What I can do</p>
+                <h2>Skills & Expertise</h2>
+            </div>
+
+            <div class="skill-groups">
+
+                <div class="skill-card">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-tags">
+                        <span>ArcGIS</span>
+                        <span>QGIS</span>
+                        <span>AutoCAD</span>
+                        <span>GNSS Survey</span>
+                        <span>Total Station</span>
+                        <span>UAV Operation</span>
+                        <span>Drone Flight Planning</span>
+                        <span>Aerial Photography</span>
+                        <span>Agisoft Metashape</span>
+                        <span>PostgreSQL</span>
+                        <span>PostGIS</span>
+                        <span>MySQL</span>
+                        <span>Visual Studio Code</span>
+                        <span>Android Studio</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-tags">
+                        <span>Leadership</span>
+                        <span>Communication</span>
+                        <span>Teamwork</span>
+                        <span>Time Management</span>
+                        <span>Problem Solving</span>
+                        <span>Adaptability</span>
+                        <span>Flexibility</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ORGANIZATION -->
+    <section class="organization" id="organization">
+        <div class="container">
+
+            <div class="section-title">
+                <p>Beyond academics</p>
+                <h2>Organizational Experience</h2>
+            </div>
+
+            <div class="org-grid">
+
+                <!-- PIONIR PERMADANI 2026 -->
+                <div class="org-card">
+                    <h3>PIONIR Permadani UGM 2026</h3>
+                    <p>Security Division Coordinator</p>
+                    <span class="date">MAR 2026 – PRESENT</span>
+                    <p class="org-description">
+                        Coordinating security operations, managing volunteers,
+                        and ensuring safety and order throughout the university
+                        orientation activities for new students.
+                    </p>
+                </div>
+
+                <!-- KMDTK 2025-2026 -->
+                <div class="org-card">
+                    <h3>Keluarga Mahasiswa Departemen Teknologi Kebumian</h3>
+                    <p>Head of Interest and Talent Division</p>
+                    <span class="date">NOV 2025 – NOV 2026</span>
+                    <p class="org-description">
+                        Leading the division, coordinating members, and organizing
+                        programs that support students' interests, talents,
+                        creativity, and personal development.
+                    </p>
+                </div>
+
+                <!-- PKL-2 SIG -->
+                <div class="org-card">
+                    <h3>PKL-2 SIG</h3>
+                    <p>Treasurer</p>
+                    <span class="date">MAR 2026 – AUG 2026</span>
+                    <p class="org-description">
+                        Managing fieldwork finances, recording transactions,
+                        monitoring budget allocation, and preparing financial
+                        reports to ensure transparent financial management.
+                    </p>
+                </div>
+
+                <!-- SPATIAL 2025 -->
+                <div class="org-card">
+                    <h3>SPATIAL 2025</h3>
+                    <p>Sponsorship Division Coordinator</p>
+                    <span class="date">JUN 2025 – MAY 2026</span>
+                    <p class="org-description">
+                        Coordinating sponsorship activities, managing team tasks,
+                        developing sponsorship proposals, and maintaining
+                        communication with potential sponsors and partners.
+                    </p>
+                </div>
+
+                <!-- PORSENIGAMA 2025 -->
+                <div class="org-card">
+                    <h3>PORSENIGAMA 2025</h3>
+                    <p>Security Division Staff</p>
+                    <span class="date">JUL 2025 – DEC 2025</span>
+                    <p class="org-description">
+                        Supporting event security operations, assisting with
+                        participant management, and maintaining safety and order
+                        during university-wide sports and arts activities.
+                    </p>
+                </div>
+
+                <!-- STARGIS -->
+                <div class="org-card">
+                    <h3>STARGIS</h3>
+                    <p>Human Resource Development Division Staff</p>
+                    <span class="date">FEB 2025 – DEC 2025</span>
+                    <p class="org-description">
+                        Supporting member development programs, assisting in
+                        organizational activities, and contributing to initiatives
+                        that enhance teamwork, skills, and member engagement.
+                    </p>
+                </div>
+
+                <!-- KMDTK SECRETARY -->
+                <div class="org-card">
+                    <h3>Keluarga Mahasiswa Departemen Teknologi Kebumian</h3>
+                    <p>Secretary of Interest and Talent Division</p>
+                    <span class="date">NOV 2024 – NOV 2025</span>
+                    <p class="org-description">
+                        Handling administrative tasks, preparing proposals and
+                        activity reports, managing correspondence, and maintaining
+                        organizational documentation.
+                    </p>
+                </div>
+
+                <!-- PIONIR PERMADANI 2025 -->
+                <div class="org-card">
+                    <h3>PIONIR Permadani UGM 2025</h3>
+                    <p>Staff of Co-Facilitator Division</p>
+                    <span class="date">MAR 2025 – SEP 2025</span>
+                    <p class="org-description">
+                        Assisting new students during orientation activities,
+                        facilitating group interactions, and supporting their
+                        adaptation to university life.
+                    </p>
+                </div>
+
+                <!-- GEOSTAV -->
+                <div class="org-card">
+                    <h3>GEOSTAV</h3>
+                    <p>Event Organizing Staff</p>
+                    <span class="date">JUL 2025 – SEP 2025</span>
+                    <p class="org-description">
+                        Supporting event preparation and execution, coordinating
+                        activity requirements, and assisting in introducing
+                        academic life and student culture to new GIS students.
+                    </p>
+                </div>
+
+                <!-- PKL-1 SIG -->
+                <div class="org-card">
+                    <h3>PKL-1 SIG</h3>
+                    <p>Treasurer</p>
+                    <span class="date">MAR 2025 – AUG 2025</span>
+                    <p class="org-description">
+                        Managing fieldwork funds, recording income and expenses,
+                        monitoring expenditures, and preparing financial reports
+                        to support the smooth implementation of field activities.
+                    </p>
+                </div>
+
+                <!-- UKM FUTSAL -->
+                <div class="org-card">
+                    <h3>UKM Futsal Putri UGM</h3>
+                    <p>Player</p>
+                    <span class="date">AUG 2024 – AUG 2025</span>
+                    <p class="org-description">
+                        Participating in regular training sessions and competitions,
+                        developing teamwork and discipline, and representing UGM
+                        in women's futsal events.
+                    </p>
+                </div>
+
+                <!-- YOUNG INDONESIA RED CROSS -->
+                <div class="org-card">
+                    <h3>Young Indonesia Red Cross Society</h3>
+                    <p>Media and Information Department Staff</p>
+                    <span class="date">NOV 2022 – NOV 2023</span>
+                    <p class="org-description">
+                        Supporting media and information activities, preparing
+                        organizational content, and helping communicate information
+                        about youth activities and humanitarian initiatives.
+                    </p>
+                </div>
+
+                <!-- PSB GSMS -->
+                <div class="org-card">
+                    <h3>PSB GSMS Nasional</h3>
+                    <p>Gamelan Coordinator</p>
+                    <span class="date">MAY 2022 – JAN 2023</span>
+                    <p class="org-description">
+                        Coordinating gamelan extracurricular activities, organizing
+                        practice sessions, and facilitating collaboration between
+                        students and arts instructors.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO GALLERY -->
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+
+            <div class="section-title">
+                <p>Selected works & documentation</p>
+                <h2>My Portfolio</h2>
+            </div>
+
+            <p class="portfolio-intro">
+                A visual collection of my surveying activities, academic work,
+                internships, and organizational experiences.
             </p>
 
-            <div class="buttons">
-                <a href="#experience" class="btn btn-primary">
-                    Explore My Experience
+            <div class="portfolio-grid">
+
+                <!-- AERIAL SURVEY -->
+
+                <article class="portfolio-card">
+
+                    <!-- PHOTO & VIDEO SLIDER -->
+                    <div class="portfolio-slider">
+
+                        <div class="slider-images">
+
+                            <video controls preload="metadata">
+                                <source src="assets/media/aerial-video.mp4" type="video/mp4">
+                                Browser tidak mendukung video.
+                            </video>
+
+                            <img src="assets/images/aerial-1.png" alt="Aerial Survey Documentation">
+
+                            <img src="assets/images/aerial-2.jpeg" alt="UAV Operation">
+
+                            <img src="assets/images/aerial-3.png" alt="Aerial Photography">
+
+                        </div>
+
+                        <button class="slider-btn prev" onclick="changeSlide(this, -1)">
+                            &#10094;
+                        </button>
+
+                        <button class="slider-btn next" onclick="changeSlide(this, 1)">
+                            &#10095;
+                        </button>
+
+                        <div class="slider-dots"></div>
+
+                    </div>
+
+                    <!-- PORTFOLIO DESCRIPTION -->
+                    <div class="portfolio-content">
+
+                        <span class="portfolio-category">
+                            SURVEYING & PHOTOGRAMMETRY
+                        </span>
+
+                        <h3>Aerial Survey</h3>
+
+                        <p>
+                            Documentation of UAV operation, drone flight planning,
+                            aerial data acquisition, and photogrammetry activities.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- MAPPING & CARTOGRAPHY -->
+                <article class="portfolio-card">
+
+                    <!-- MAP PORTFOLIO SLIDER -->
+                    <div class="portfolio-slider">
+
+                        <div class="slider-images">
+
+                            <img src="assets/images/mapping-1.jpg" alt="Thematic Mapping">
+
+                            <img src="assets/images/mapping-2.jpg" alt="Remote Sensing Mapping">
+
+                            <img src="assets/images/mapping-3.jpg" alt="Spatial Analysis Map">
+
+                        </div>
+
+                        <button class="slider-btn prev" onclick="changeSlide(this, -1)">
+                            &#10094;
+                        </button>
+
+                        <button class="slider-btn next" onclick="changeSlide(this, 1)">
+                            &#10095;
+                        </button>
+
+                        <div class="slider-dots"></div>
+
+                    </div>
+
+                    <!-- PORTFOLIO DESCRIPTION -->
+                    <div class="portfolio-content">
+
+                        <span class="portfolio-category">
+                            GIS & CARTOGRAPHY
+                        </span>
+
+                        <h3>Mapping & Cartographic Works</h3>
+
+                        <p>
+                            A collection of thematic maps and geospatial visualization
+                            projects created through GIS, remote sensing, spatial
+                            analysis, and digital cartography.
+                        </p>
+
+                        <!-- MAPPING DOCUMENTS -->
+                        <h4>Mapping Projects & Reports</h4>
+
+                        <div class="document-links">
+
+                            <a href="assets/documents/Album Peta.pdf" target="_blank" rel="noopener noreferrer"
+                                class="document-btn">
+                                View Map Album
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+                <!-- INTERNSHIP -->
+                <article class="portfolio-card">
+
+                    <!-- PHOTO SLIDER -->
+                    <div class="portfolio-slider">
+
+                        <div class="slider-images">
+
+                            <img src="assets/images/internship-1.jpg" alt="Mapping Internship Documentation">
+
+                            <img src="assets/images/internship-2.jpg" alt="Spatial Data Processing">
+
+                            <img src="assets/images/internship-3.jpg" alt="GIS Digitization">
+
+                            <img src="assets/images/internship-4.jpg" alt="Technical Drawing">
+
+                            <img src="assets/images/internship-5.jpg" alt="GIS Digitization">
+
+                            <img src="assets/images/internship-6.jpg" alt="Technical Drawing">
+
+                        </div>
+
+                        <button class="slider-btn prev" onclick="changeSlide(this, -1)">
+                            &#10094;
+                        </button>
+
+                        <button class="slider-btn next" onclick="changeSlide(this, 1)">
+                            &#10095;
+                        </button>
+
+                        <div class="slider-dots"></div>
+
+                    </div>
+
+                    <!-- PORTFOLIO DESCRIPTION -->
+                    <div class="portfolio-content">
+
+                        <span class="portfolio-category">
+                            MAPPING & SPATIAL DATA
+                        </span>
+
+                        <h3>Mapping & Surveying Internship</h3>
+
+                        <p>
+                            Documentation of mapping activities, spatial data
+                            processing, digitization, and technical drawing.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- ORGANIZATIONAL & ADMINISTRATIVE EXPERIENCE -->
+                <article class="portfolio-card">
+
+                    <!-- PHOTO SLIDER -->
+                    <div class="portfolio-slider">
+
+                        <div class="slider-images">
+
+                            <img src="assets/images/organization-1.jpeg" alt="Organizational Activities">
+
+                            <img src="assets/images/organization-2.jpeg" alt="Event Committee">
+
+                            <img src="assets/images/organization-8.jpeg" alt="Team Coordination">
+
+                            <img src="assets/images/organization-3.jpeg" alt="Team Coordination">
+
+                            <img src="assets/images/organization-4.jpeg" alt="Secretary and Administrative Activities">
+
+                            <img src="assets/images/organization-5.jpeg" alt="Organizational Activities">
+
+                            <img src="assets/images/organization-6.jpeg" alt="Event Committee">
+
+                            <img src="assets/images/organization-7.jpeg" alt="Team Coordination">
+
+                        </div>
+
+                        <button class="slider-btn prev" onclick="changeSlide(this, -1)">
+                            &#10094;
+                        </button>
+
+                        <button class="slider-btn next" onclick="changeSlide(this, 1)">
+                            &#10095;
+                        </button>
+
+                        <div class="slider-dots"></div>
+
+                    </div>
+
+                    <!-- PORTFOLIO DESCRIPTION -->
+                    <div class="portfolio-content">
+
+                        <span class="portfolio-category">
+                            LEADERSHIP & ADMINISTRATION
+                        </span>
+
+                        <h3>Organizational & Administrative Experience</h3>
+
+                        <p>
+                            Experience in event coordination, team management,
+                            organizational activities, and administrative responsibilities,
+                            including proposal preparation, activity planning,
+                            report writing, and document management.
+                        </p>
+
+                        <!-- ORGANIZATIONAL DOCUMENTS -->
+                        <h4>POVVAF DTK 2025</h4>
+
+                        <div class="document-links">
+
+                            <a href="assets/documents/LPJ_POVVAF_DTK_2025.pdf" target="_blank" rel="noopener noreferrer"
+                                class="document-btn">
+                                View LPJ
+                            </a>
+
+                            <a href="assets/documents/PROPOSAL_POVVAF_2025.pdf" target="_blank"
+                                rel="noopener noreferrer" class="document-btn">
+                                View Proposal
+                            </a>
+
+                        </div>
+
+                        <h4>TEKNOFEST 2025</h4>
+
+                        <div class="document-links">
+
+                            <a href="assets/documents/LPJ_TEKNOFEST.pdf" target="_blank" rel="noopener noreferrer"
+                                class="document-btn">
+                                View LPJ
+                            </a>
+
+                            <a href="assets/documents/Proposal_TEKNOFEST_2025.pdf" target="_blank"
+                                rel="noopener noreferrer" class="document-btn">
+                                View Proposal
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ACHIEVEMENTS -->
+
+    <section class="achievements" id="achievements">
+        <div class="container">
+
+            <div class="section-title">
+                <p>Milestones & recognition</p>
+                <h2>Achievements & Certification</h2>
+            </div>
+
+            <div class="achievement-list">
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">🏆</div>
+                    <div>
+                        <h3>Best Participant – Aerial Photo Data Processing</h3>
+                        <p>Academic Achievement | 2023</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">📜</div>
+                    <div>
+                        <h3>Level 2 Surveyor Certification</h3>
+                        <p>LSP | 2024</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">🥇</div>
+                    <div>
+                        <h3>1st Place – Women's Futsal Competition</h3>
+                        <p>Porsenigama | 2024</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">🥈</div>
+                    <div>
+                        <h3>2nd Place – Women's Relay Competition</h3>
+                        <p>POVVAF | 2025 & 2026</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">🥉</div>
+                    <div>
+                        <h3>3rd Place – Women's Long Jump Competition</h3>
+                        <p>POVVAF | 2025 & 2026</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">⚽</div>
+                    <div>
+                        <h3>Futsal and Football Team Manager</h3>
+                        <p>Departemen Teknologi Kebumian | 2025</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+        <div class="container contact-content">
+
+            <div class="section-title">
+                <p>Let's connect</p>
+                <h2>Get In Touch</h2>
+            </div>
+
+            <p>
+                Interested in collaborating, discussing geospatial projects,
+                or exploring new opportunities? Feel free to reach out!
+            </p>
+
+            <div class="contact-links">
+
+                <a href="mailto:zhafirasyahdrina@gmail.com" class="btn btn-primary">
+                    Email Me
                 </a>
 
-                <a href="#contact" class="btn btn-outline">
-                    Get In Touch
+                <a href="https://linkedin.com/in/zhafira-nur-syahdrina" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-outline">
+                    LinkedIn
                 </a>
-            </div>
-        </div>
-
-        <div class="hero-visual">
-            <div class="profile-card">
-                <div class="profile-initial">
-                    <h2>ZS</h2>
-                    <p>GEOSPATIAL PORTFOLIO</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-<!-- ABOUT -->
-<section class="about" id="about">
-    <div class="container">
-
-        <div class="section-title">
-            <p>Get to know me</p>
-            <h2>About Me</h2>
-        </div>
-
-        <div class="about-grid">
-
-            <div class="about-text">
-                <p>
-                    I am a Geographic Information Systems student at
-                    Universitas Gadjah Mada with a strong interest in
-                    surveying, mapping, and geospatial data processing.
-                </p>
-
-                <p>
-                    I have experience in aerial surveying, GNSS field
-                    activities, topographic measurements, and spatial
-                    data processing using various GIS applications.
-                </p>
-
-                <p>
-                    Beyond technical skills, I actively participate in
-                    organizational activities and have experience in
-                    leadership, teamwork, coordination, and event management.
-                </p>
-            </div>
-
-            <div class="info-list">
-
-                <div class="info-item">
-                    <h3>Education</h3>
-                    <p>Universitas Gadjah Mada</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>Major</h3>
-                    <p>Geographic Information Systems</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>Location</h3>
-                    <p>Sleman, Yogyakarta</p>
-                </div>
-
-                <div class="info-item">
-                    <h3>Interests</h3>
-                    <p>GIS, Surveying & Mapping</p>
-                </div>
 
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- EXPERIENCE -->
-<section class="experience" id="experience">
-    <div class="container">
+    <!-- FOOTER -->
 
-        <div class="section-title">
-            <p>My professional journey</p>
-            <h2>Work Experience</h2>
-        </div>
+    <footer>
+        <p>© 2026 Zhafira Nur Syahdrina. All Rights Reserved.</p>
+        <p>Designed with passion for geospatial technology.</p>
+    </footer>
 
-        <div class="timeline">
+    <!-- JAVASCRIPT -->
 
-            <div class="timeline-item">
-                <span class="date">AUG 2026 – PRESENT</span>
-                <h3>Teaching Assistant – Aerial Survey Practicum</h3>
-                <p class="company">Universitas Gadjah Mada</p>
-                <ul>
-                    <li>Assisted students in aerial surveying practical sessions using drones.</li>
-                    <li>Assisted in processing and analyzing aerial imagery.</li>
-                    <li>Conducted drone flight planning.</li>
-                    <li>Provided technical guidance during practical activities.</li>
-                </ul>
-            </div>
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
 
-            <div class="timeline-item">
-                <span class="date">AUG 2026 – PRESENT</span>
-                <h3>Teaching Assistant – GNSS Practicum</h3>
-                <p class="company">Universitas Gadjah Mada</p>
-                <ul>
-                    <li>Assisted students in GNSS surveying practical sessions.</li>
-                    <li>Guided GNSS equipment operation and field data collection.</li>
-                    <li>Provided technical assistance during practical activities.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">MAY 2024 – JUL 2024</span>
-                <h3>Internship – Mapping Team</h3>
-                <p class="company">ATR/BPN Bantul</p>
-                <ul>
-                    <li>Processed PTSL data using AutoCAD and ArcGIS.</li>
-                    <li>Performed parcel digitization, topology, and delineation.</li>
-                    <li>Identified and managed data using Microsoft Excel.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">JUN 2023 – AUG 2023</span>
-                <h3>Internship – Drafter</h3>
-                <p class="company">MASKI KOMWIL DIY</p>
-                <ul>
-                    <li>Conducted data quality control processes.</li>
-                    <li>Performed quality checks on PTSL processes.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">OCT 2022 – DEC 2022</span>
-                <h3>Internship – Drafter</h3>
-                <p class="company">Geo Survey Persada Indonesia</p>
-                <ul>
-                    <li>Processed PTSL data using AutoCAD.</li>
-                    <li>Prepared project drawings using AutoCAD and Excel.</li>
-                </ul>
-            </div>
-
-            <div class="timeline-item">
-                <span class="date">SEP 2022 – OCT 2022</span>
-                <h3>Internship – Assistant Surveyor</h3>
-                <p class="company">PT Kalimantan Prima Persada</p>
-                <ul>
-                    <li>Conducted topographic measurements using Total Station.</li>
-                    <li>Performed stakeout and vessel navigation using GNSS.</li>
-                    <li>Processed survey data using Surpac.</li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="education" id="education">
-    <div class="container">
-
-        <div class="section-title">
-            <p>Academic background</p>
-            <h2>Education</h2>
-        </div>
-
-        <div class="education-grid">
-
-            <div class="education-card">
-                <h3>Universitas Gadjah Mada</h3>
-                <p>Geographic Information Systems</p>
-                <br>
-                <p>
-                    • Spatial data processing and cartographic mapping<br>
-                    • WebGIS and mobile application development<br>
-                    • Spatial database management<br>
-                    • Aerial and UAV imagery processing
-                </p>
-            </div>
-
-            <div class="education-card">
-                <h3>SMKN 2 Yogyakarta</h3>
-                <p>Vocational Education</p>
-                <br>
-                <p>
-                    • Topographic surveying using Total Station and GNSS<br>
-                    • Drone operation and orthophoto processing<br>
-                    • Best Participant in Aerial Photo Data Processing
-                </p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- SKILLS -->
-<section class="skills" id="skills">
-    <div class="container">
-
-        <div class="section-title">
-            <p>What I can do</p>
-            <h2>Skills & Expertise</h2>
-        </div>
-
-        <div class="skill-groups">
-
-            <div class="skill-card">
-                <h3>Technical Skills</h3>
-                <div class="skill-tags">
-                    <span>ArcGIS</span>
-                    <span>QGIS</span>
-                    <span>AutoCAD</span>
-                    <span>GNSS Survey</span>
-                    <span>Total Station</span>
-                    <span>UAV Operation</span>
-                    <span>Drone Flight Planning</span>
-                    <span>Aerial Photography</span>
-                    <span>Agisoft Metashape</span>
-                    <span>PostgreSQL</span>
-                    <span>PostGIS</span>
-                    <span>MySQL</span>
-                    <span>Visual Studio Code</span>
-                    <span>Android Studio</span>
-                </div>
-            </div>
-
-            <div class="skill-card">
-                <h3>Professional Skills</h3>
-                <div class="skill-tags">
-                    <span>Leadership</span>
-                    <span>Communication</span>
-                    <span>Teamwork</span>
-                    <span>Time Management</span>
-                    <span>Problem Solving</span>
-                    <span>Adaptability</span>
-                    <span>Flexibility</span>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ORGANIZATION -->
-<section class="organization" id="organization">
-    <div class="container">
-
-        <div class="section-title">
-            <p>Beyond academics</p>
-            <h2>Organizational Experience</h2>
-        </div>
-
-        <div class="org-grid">
-
-            <div class="org-card">
-                <h3>PIONIR Permadani UGM</h3>
-                <p>Security Division Coordinator</p>
-                <span class="date">MAR 2026 – PRESENT</span>
-            </div>
-
-            <div class="org-card">
-                <h3>KMDTK</h3>
-                <p>Head of Interest and Talent Division</p>
-                <span class="date">NOV 2025 – PRESENT</span>
-            </div>
-
-            <div class="org-card">
-                <h3>SPATIAL</h3>
-                <p>Sponsorship Division Coordinator</p>
-                <span class="date">JUN 2025 – MAY 2026</span>
-            </div>
-
-            <div class="org-card">
-                <h3>Porsenigama</h3>
-                <p>Security Division Staff</p>
-                <span class="date">JUL 2025 – DEC 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>STARGIS</h3>
-                <p>Human Resource Development Division Staff</p>
-                <span class="date">FEB 2025 – DEC 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>KMDTK</h3>
-                <p>Secretary of Interest and Talent Division</p>
-                <span class="date">NOV 2024 – NOV 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>PIONIR Permadani UGM</h3>
-                <p>Staff of Co-Facilitator Division</p>
-                <span class="date">MAR 2025 – SEP 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>GEOSTAV</h3>
-                <p>Event Organizing Staff</p>
-                <span class="date">JUL 2025 – SEP 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>UKM Futsal Putri UGM</h3>
-                <p>Player</p>
-                <span class="date">AUG 2024 – AUG 2025</span>
-            </div>
-
-            <div class="org-card">
-                <h3>Young Indonesia Red Cross Society</h3>
-                <p>Media and Information Department Staff</p>
-                <span class="date">NOV 2022 – NOV 2023</span>
-            </div>
-
-            <div class="org-card">
-                <h3>PSB GSMS Nasional</h3>
-                <p>Gamelan Coordinator</p>
-                <span class="date">MAY 2022 – JAN 2023</span>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- ACHIEVEMENTS -->
-<section class="achievements" id="achievements">
-    <div class="container">
-
-        <div class="section-title">
-            <p>Milestones & recognition</p>
-            <h2>Achievements & Certification</h2>
-        </div>
-
-        <div class="achievement-list">
-
-            <div class="achievement-item">
-                <div class="achievement-icon">🏆</div>
-                <div>
-                    <h3>Best Participant – Aerial Photo Data Processing</h3>
-                    <p>Academic Achievement | 2023</p>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="achievement-icon">🥇</div>
-                <div>
-                    <h3>1st Place – Women's Futsal Competition</h3>
-                    <p>Porsenigama | 2024</p>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="achievement-icon">🥈</div>
-                <div>
-                    <h3>2nd Place – Women's Relay Competition</h3>
-                    <p>POVVAF | 2025 & 2026</p>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="achievement-icon">🥉</div>
-                <div>
-                    <h3>3rd Place – Women's Long Jump Competition</h3>
-                    <p>POVVAF | 2025 & 2026</p>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="achievement-icon">📜</div>
-                <div>
-                    <h3>Level 2 Surveyor Certification</h3>
-                    <p>LSP | 2024</p>
-                </div>
-            </div>
-
-            <div class="achievement-item">
-                <div class="achievement-icon">⚽</div>
-                <div>
-                    <h3>Futsal and Football Team Manager</h3>
-                    <p>Departemen Teknologi Kebumian | 2025</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-    <div class="container contact-content">
-
-        <div class="section-title">
-            <p>Let's connect</p>
-            <h2>Get In Touch</h2>
-        </div>
-
-        <p>
-            Interested in collaborating, discussing geospatial projects,
-            or exploring new opportunities? Feel free to reach out!
-        </p>
-
-        <div class="contact-links">
-            <a href="mailto:zhafirasyahdrina@gmail.com"
-               class="btn btn-primary">
-                Email Me
-            </a>
-
-            <a href="http://linkedin.com/in/zhafira-nur-syahdrina"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn btn-outline">
-                LinkedIn
-            </a>
-        </div>
-
-    </div>
-</section>
-
-<footer>
-    <p>© 2026 Zhafira Nur Syahdrina. All Rights Reserved.</p>
-    <p>Designed with passion for geospatial technology.</p>
-</footer>
-
-<script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.addEventListener("click", function() {
-        navLinks.classList.toggle("active");
-    });
-
-    document.querySelectorAll(".nav-links a").forEach(link => {
-        link.addEventListener("click", function() {
-            navLinks.classList.remove("active");
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
         });
-    });
-</script>
+
+        document.querySelectorAll(".nav-links a").forEach(link => {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+            });
+        });
+    </script>
+
+    <script>
+        function changeSlide(button, direction) {
+            const slider = button.closest('.portfolio-slider');
+            const images = slider.querySelector('.slider-images');
+            const total = images.children.length;
+
+            let current = Number(slider.dataset.current || 0);
+
+            current = (current + direction + total) % total;
+
+            updateSlider(slider, current);
+        }
+
+        function updateSlider(slider, index) {
+            const images = slider.querySelector('.slider-images');
+            const dots = slider.querySelector('.slider-dots');
+
+            slider.dataset.current = index;
+
+            images.style.transform = `translateX(-${index * 100}%)`;
+
+            [...dots.children].forEach((dot, i) => {
+                dot.classList.toggle('active', i === index);
+            });
+        }
+
+        document.querySelectorAll('.portfolio-slider').forEach(slider => {
+            const images = slider.querySelector('.slider-images');
+            const dots = slider.querySelector('.slider-dots');
+
+            [...images.children].forEach((img, index) => {
+                const dot = document.createElement('button');
+
+                dot.addEventListener('click', () => {
+                    updateSlider(slider, index);
+                });
+
+                dots.appendChild(dot);
+            });
+
+            updateSlider(slider, 0);
+        });
+    </script>
 
 </body>
+
 </html>
